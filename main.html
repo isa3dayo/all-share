@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Eel</title>
+	</head>
+	<body>
+		<!--  -->
+		<!-- タイトル -->
+		<h1 id=main-title></h1>
+		<!-- image folder open -->
+		<button id="image" onClick="click_diropen(this.id)">画像フォルダを開く</button>
+		<!-- PDF folder open -->
+		<button id="pdf" onClick="click_diropen(this.id)">PDFフォルダを開く</button>
+		<!-- imageフアイルを取り込むボタン-->
+		<input id="dir-choice" type="file" name="upfile[]" webkitdirectory>
+		<!-- movable type のcsvを読み込む-->
+		<input id='write-csv' type="file" accept=".csv">
+		<!-- sheet api からデータを読み込む時のステータス -->
+		<p id=pandas-read-error></p>
+		<!-- 何個の画像を取り込みしたかのステータス -->
+		<p id=image-move></p>
+		<!-- csvを読み込むときのステータス -->
+		<p id=csv-state></p>
+		<!-- 下記必須 -->
+		<script type="text/javascript" src="/eel.js"></script>
+		<script type="text/javascript" src="system.js"></script>
+	</body>
+</html>
