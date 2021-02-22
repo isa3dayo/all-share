@@ -1,28 +1,61 @@
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Eel</title>
-	</head>
-	<body>
-		<!--  -->
-		<!-- タイトル -->
-		<h1 id=main-title></h1>
-		<!-- image folder open -->
-		<button id="image" onClick="click_diropen(this.id)">画像フォルダを開く</button>
-		<!-- PDF folder open -->
-		<button id="pdf" onClick="click_diropen(this.id)">PDFフォルダを開く</button>
-		<!-- imageフアイルを取り込むボタン-->
-		<input id="dir-choice" type="file" name="upfile[]" webkitdirectory>
-		<!-- movable type のcsvを読み込む-->
-		<input id='write-csv' type="file" accept=".csv">
-		<!-- sheet api からデータを読み込む時のステータス -->
-		<p id=pandas-read-error></p>
-		<!-- 何個の画像を取り込みしたかのステータス -->
-		<p id=image-move></p>
+<!DOCTYPE html>
+
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="UTF-8">
+<title>cathand</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="ca-style.css">
+</head>
+<body>
+	<section class="top-main">
+	<header><div class="left-box"><a href="/"><img src="ca-images/cat1.png" width="70" /><h1 id=main-title></h1><h2>CATHAND TOP<h2></a></div>
+	<div class="right-box">
+		<button id="image" onClick="click_diropen(this.id)" class="grey-bottom bottom-long">画像・PDFをフォルダにいれる</button>
+	</div>
+	</header>
+			
+	<div class="display-item file-upload">
+		<h4 id=pandas-read-error>CSVデータアップロード</h4>
+		<span id=csv-display></span>
 		<!-- csvを読み込むときのステータス -->
-		<p id=csv-state></p>
-		<!-- 下記必須 -->
+	</div>
+		
+	<div class="contents">
+	<div class="display-item">
+		<div class="title-box">
+			<h3>データ表示項目選択<span>（チェックが入っている項目が下画面に表示されます）</span></h3>
+			<p class="small-bottom">全部クリア</p></div>
+		<div id='header-checkbox' class="koumoku">
+		</div>
+		
+	<div class="data-display">
+		<hr>
+		<div id='state-button' class="status">
+		</div>
+		
+		<div class="show-data">
+		<table class="data-table">
+  <tbody id="list-display">
+  </tbody>
+</table>
+		
+		</div>
+		<div id="sheet-list"></div>
+	</div>
+		<div class="under-bottom">
+		<div class="under-box">選択データ詳細</div>
+		<div class="under-box">リストのPDF化</div>
+		<div class="under-box">リストのPDF保存</div>
+		<div class="under-box"></div>
+		<div class="under-box"><button id="pdf" onClick="click_diropen(this.id)">PDF保存フォルダを見る</button></div>	
+		</div>
+	</div>
+	
+</section>
 		<script type="text/javascript" src="/eel.js"></script>
 		<script type="text/javascript" src="system.js"></script>
-	</body>
+</body>
+
 </html>
