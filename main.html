@@ -26,7 +26,7 @@
 	<div class="display-item">
 		<div class="title-box">
 			<h3>データ表示項目選択<span>（チェックが入っている項目が下画面に表示されます）</span></h3>
-			<p class="small-bottom">全部クリア</p></div>
+			<span id='checkbox-id'></span></div>
 		<div id='header-checkbox' class="koumoku">
 		</div>
 		
@@ -45,11 +45,11 @@
 		<div id="sheet-list"></div>
 	</div>
 		<div class="under-bottom">
-		<div class="under-box">選択データ詳細</div>
-		<div class="under-box">リストのPDF化</div>
-		<div class="under-box">リストのPDF保存</div>
+			<div class="under-box"><a href='#' onclick="csv_change()";return false;>リストのCSV化</a></div>
+		<div class="under-box"><a href='#' onclick="list_pdf_change()";return false;>リストのPDF化</a></div>
+		<div class="under-box"><a href='#' onclick="all_pdf_change()";return false;>リストのPDF保存</a></div>
 		<div class="under-box"></div>
-		<div class="under-box"><button id="pdf" onClick="click_diropen(this.id)">PDF保存フォルダを見る</button></div>	
+		<div class="under-box"><a href='#' onclick="click_diropen('pdf')";return false;>PDF保存フォルダを見る</a></div>	
 		</div>
 	</div>
 	
